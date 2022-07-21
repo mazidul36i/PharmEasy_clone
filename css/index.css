@@ -24,8 +24,16 @@
     box-sizing: border-box;
 }
 .container > .title {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 26px;
+    align-items: center;
+    display: flex;
+}
+.container > .title > .view-all {
+    margin-left: auto;
+    font-size: 18px;
+    color: var(--main-color);
+    cursor: pointer;
 }
 .container > .subtitle {
     font-size: 16px;
@@ -36,10 +44,71 @@
 .container > .subtitle > img {
     height: 18px;
 }
+/* ===== Product Card ===== */
+.product-cards::-webkit-scrollbar {
+    display: none;
+}
+.product-cards {
+    display: flex;
+    gap: 25px;
+    overflow: auto;
+    padding: 2px;
+}
+.product-cards > div {
+    cursor: pointer;
+    max-width: 175px;
+    min-width: 175px;
+}
+.product-cards > div > img {
+    width: 100%;
+    aspect-ratio: 0.9;
+    object-fit: contain;
+    border-radius: 8px;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: var(--shadow-border);
+    margin-bottom: 10px;
+    background-color: white;
+}
+.product-cards > div > img:hover {
+    box-shadow: var(--shadow);
+}
+.product-cards > div .name {
+    font-weight: 500;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.product-cards > div p {
+    margin: 10px 0;
+    font-weight: 500;
+    color: rgb(167, 167, 167);
+}
+.product-cards > div p > span {
+    color: rgb(167, 167, 167);
+    text-decoration: line-through;
+}
+.product-cards > div h4:last-child {
+    font-weight: 600;
+}
+.product-cards > div h4:last-child > span {
+    margin-left: 10px;
+    color: rgb(250, 81, 81);
+    font-size: 15px;
+}
 
 /* -------------Navbar ---------- */
-
 .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+}
+.nav {
     box-shadow: lightgrey 0 0 5px;
     width: 100%;
     padding: 5px;
@@ -47,12 +116,12 @@
     display: flex;
 }
 
-.navbar > img {
+.nav > img {
     margin: 7px 35px;
     height: 40px;
 }
 
-.navbar > img + div {
+.nav > img + div {
     width: 1px;
     background-color: grey;
     height: 30px;
@@ -97,27 +166,29 @@
     font-size: 14px;
 }
 
-.navbar > ul {
+.nav > ul {
     margin: auto 20px;
     display: flex;
     text-decoration: none;
     list-style: none;
 }
 
-.navbar > ul li {
+.nav > ul li {
     margin: 10px 15px;
     align-items: center;
     display: flex;
     cursor: pointer;
 }
 
-.navbar > ul li p {
+.nav > ul li p {
     margin-left: 5px;
     font-size: 14px;
 }
 
 /* ------------------ Search ---------------- */
-
+.search-layout {
+    margin-top: 100px;
+}
 .search-layout > div {
     width: 70%;
     margin: 30px auto 0;
@@ -176,6 +247,7 @@
     border: none;
     outline: none;
     font-size: 15px;
+    width: 100%;
 }
 
 .search-bar > input[type="submit"] {
@@ -187,41 +259,47 @@
     color: white;
     font-weight: 600;
     border-radius: 35px;
+    cursor: pointer;
 }
 
 /* -----------Nav Cards ------------- */
-
-.nav-card-layout {
-    padding: 5%;
-    display: grid;
+.nav-card-layout > div {
+    display: flex;
     gap: 40px;
     text-align: center;
-    grid-template-columns: repeat(7, 1fr);
+    overflow: auto;
+    padding: 2px;
 }
-
-.nav-card-layout div {
-    padding: 8px;
+.nav-card-layout > div::-webkit-scrollbar {
+    display: none;
+}
+.nav-card-layout > div div {
+    padding: 8px 15px;
     border-radius: 10px;
     cursor: pointer;
 }
-.nav-card-layout div:hover {
+.nav-card-layout > div div:hover {
     box-shadow: lightgrey 0 0 6px;
 }
-.nav-card-layout img {
-    width: 100%;
+.nav-card-layout > div img {
+    width: 90px;
 }
-.nav-card-layout h4 {
+.nav-card-layout > div h4 {
     font-weight: 500;
 }
-.nav-card-layout p {
+.nav-card-layout > div p {
     font-size: 13px;
     color: red;
 }
 
 /* --------------- Banners -------------- */
 
+.banners::-webkit-scrollbar {
+    display: none;
+}
 .banners {
     display: flex;
+    overflow: auto;
     width: 90%;
     margin: auto;
     box-sizing: border-box;
@@ -396,51 +474,6 @@
 }
 
 /* -----------New Launches, Trending [Product Cards]---------- */
-.product-cards {
-    display: grid;
-    gap: 25px;
-    grid-template-columns: repeat(6, 1fr);
-}
-.product-cards > div {
-    cursor: pointer;
-}
-.product-cards > div > img {
-    width: 100%;
-    aspect-ratio: 0.9;
-    object-fit: contain;
-    border-radius: 8px;
-    padding: 15px;
-    box-sizing: border-box;
-    box-shadow: var(--shadow-border);
-    margin-bottom: 10px;
-}
-.product-cards > div > h4:nth-child(2) {
-    font-weight: 500;
-    font-size: 15px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-}
-.product-cards > div > p {
-    margin: 10px 0;
-    font-weight: 500;
-    color: rgb(167, 167, 167);
-}
-.product-cards > div > p > span {
-    color: rgb(167, 167, 167);
-    text-decoration: line-through;
-}
-.product-cards > div > h4:last-child {
-    font-weight: 600;
-}
-.product-cards > div > h4:last-child > span {
-    margin-left: 10px;
-    color: rgb(250, 81, 81);
-    font-size: 15px;
-}
 
 /* --------Trending --------- */
 /* .trending {
@@ -546,6 +579,7 @@
     font-weight: 600;
     border: none;
     align-items: center;
+    cursor: pointer;
 }
 .become-plus-member > div:nth-child(2) > button > i {
     color: rgb(255, 174, 0);
@@ -589,13 +623,6 @@
 /* -------- Freq booked lab test -------- */
 .freq-booked-lab-tests > h1 {
     margin-bottom: 40px;
-    display: flex;
-}
-.freq-booked-lab-tests > h1 > span {
-    margin-left: auto;
-    font-size: 18px;
-    color: var(--main-color);
-    cursor: pointer;
 }
 
 .product-banner {
@@ -660,4 +687,330 @@
 .product-banner > div > div > img {
     width: 40%;
     margin-left: auto;
+}
+
+/* ---------------------------- Day 3 ---------------------------- */
+/* ----------- Payment Offer ---------- */
+.payment-offers {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.payment-offers > div::-webkit-scrollbar {
+    display: none;
+}
+.payment-offers > div {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    gap: 30px;
+}
+.payment-offers > div > img {
+    height: 80px;
+    cursor: pointer;
+}
+
+/* ----------- Wellness Essentials --------- */
+
+.product-cards2::-webkit-scrollbar {
+    display: none;
+}
+.product-cards2 {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.product-cards2 > div {
+    cursor: pointer;
+    display: flex;
+}
+.product-cards2 > div > img {
+    height: 150px;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-radius: 8px;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: var(--shadow-border);
+    margin-bottom: 10px;
+}
+.product-cards2 > div > img:hover {
+    box-shadow: var(--shadow);
+}
+.product-cards2 > div > div {
+    padding: 0 10px 10px 20px;
+    box-sizing: border-box;
+}
+.product-cards2 > div .name {
+    font-weight: 500;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.product-cards2 > div p {
+    margin: 10px 0;
+    font-weight: 500;
+    color: rgb(167, 167, 167);
+}
+.product-cards2 > div p > span {
+    color: rgb(167, 167, 167);
+    text-decoration: line-through;
+}
+.product-cards2 > div h4:last-child {
+    font-weight: 600;
+}
+.product-cards2 > div h4:last-child > span {
+    margin-left: 10px;
+    color: rgb(250, 81, 81);
+    font-size: 15px;
+}
+
+/* --------- Featured Brands ---------------- */
+.featured-brands > div::-webkit-scrollbar {
+    display: none;
+}
+.featured-brands > div {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    gap: 30px;
+}
+.featured-brands > .brand-offer {
+    margin-top: 70px;
+}
+.featured-brands > .brand-promo > div {
+    cursor: pointer;
+}
+.featured-brands > .brand-promo img {
+    height: 180px;
+    border-radius: 5px;
+}
+.featured-brands > .brand-promo img:hover {
+    box-shadow: var(--shadow);
+}
+.featured-brands > .brand-promo h4 {
+    text-align: center;
+    font-weight: 500;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.featured-brands > .brand-offer > img {
+    height: 240px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ---------Deals of the Day -------- */
+.deals-of-the-day > h1 {
+    margin-bottom: 40px;
+}
+.deals-of-the-day > .title > .timer {
+    margin-left: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    padding: 6px 10px;
+    background-color: rgb(252, 129, 47);
+}
+.deals-of-the-day > .title > .timer i {
+    color: white;
+}
+
+/* ---------- Spotlight -------- */
+.spotlight {
+    background: linear-gradient(to bottom, rgb(255, 240, 238), white);
+}
+.spotlight > .title {
+    margin-bottom: 30px;
+}
+
+.spotlight > .product-promo {
+    margin-top: 80px;
+    display: flex;
+    overflow: auto;
+    gap: 30px;
+}
+.spotlight > .product-promo > img {
+    height: 140px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.spotlight > .product-promo::-webkit-scrollbar {
+    display: none;
+}
+.spotlight > .product-promo > img:hover {
+    box-shadow: var(--shadow);
+}
+
+/* -------- Health Articles ---------- */
+.health-articles > h1 {
+    margin-bottom: 20px;
+}
+
+.health-articles > div::-webkit-scrollbar {
+    display: none;
+}
+.health-articles > div {
+    display: flex;
+    overflow: auto;
+    padding: 1px;
+    gap: 30px;
+}
+.health-articles > div > div:hover {
+    box-shadow: var(--shadow);
+}
+.health-articles > div > div {
+    box-shadow: var(--shadow-border);
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+.health-articles > div img {
+    height: 180px;
+    border-radius: 8px 8px 0 0;
+    aspect-ratio: 1.3;
+    object-fit: cover;
+}
+.health-articles > div p {
+    margin: 14px 20px;
+}
+
+/* ---------- Why choose us -------- */
+.why-choose-us {
+    background-color: rgb(241, 247, 255);
+}
+.why-choose-us > h1 {
+    margin-bottom: 40px;
+}
+
+.why-choose-us > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+.why-choose-us > div > div {
+    display: flex;
+    align-items: center;
+}
+.why-choose-us > div > div > div {
+    margin-left: 20px;
+}
+.why-choose-us > div > div img {
+    height: 80px;
+}
+.why-choose-us > div > div h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+.why-choose-us > div > div p {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* -------- Customer Review -------- */
+.customer-review > .title {
+    margin-bottom: 35px;
+}
+
+.reviews::-webkit-scrollbar {
+    display: none;
+}
+.reviews {
+    display: flex;
+    overflow: auto;
+    gap: 40px;
+}
+.reviews > div {
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews > div > h3 {
+    font-size: 17px;
+    font-weight: 600;
+}
+.reviews > div > p {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.reviews > div > div {
+    margin-top: 20px;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px rgb(137, 226, 226) solid;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: rgb(233, 255, 255);
+}
+.reviews > div > div > i {
+    color: rgb(202, 233, 233);
+    font-size: 23px;
+}
+.reviews > div > div > p {
+    color: rgb(100, 100, 100);
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+/* ------- App Promo --------- */
+.app-promo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: url(https://assets.pharmeasy.in/apothecary/images/downloadBanner.webp?dim=1024x0&q=100)
+        rgb(224, 255, 248);
+    background-size: cover;
+}
+.app-promo > h1 {
+    font-size: 38px;
+}
+.app-promo > h3 {
+    line-height: 80px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.app-promo > div {
+    display: flex;
+    gap: 50px;
+}
+.app-promo img {
+    height: 50px;
+    cursor: pointer;
+}
+
+/* ----------- FAQ -------------- */
+.FAQ > h5 {
+    margin-top: 25px;
+    font-weight: 400;
+    word-spacing: 1px;
+    line-height: 22px;
+}
+.FAQ > h5 > b {
+    font-weight: 600;
+}
+.FAQ > h5 > span:hover {
+    cursor: pointer;
+    color: var(--main-color);
+}
+
+.FAQ > h5 > br {
+    line-height: 10px;
+    height: 10px;
+}
+
+.FAQ > h5 > p {
+    height: 10px;
+}
+
+.FAQ > h4 {
+    margin: 30px 0;
+    font-weight: 600;
 }
