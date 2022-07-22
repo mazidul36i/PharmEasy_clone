@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --text-color: #4f585e;
+    --main-color: rgb(7, 148, 148);
+    --shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    --shadow-border: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Inter, sans-serif;
+    color: var(--text-color);
+}
+
+/* ------------ Global Style ---------- */
+.container {
+    width: 100%;
+    padding: 40px 9%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* -------------Navbar ---------- */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: rgb(7, 150, 150);
+    box-shadow: lightgrey 0 0 5px;
+    height: 120px;
+    transition: ease height 0.3s;
+    overflow: hidden;
+}
+.nav {
+    width: 100%;
+    padding: 5px 0;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.nav > img {
+    margin: 7px 35px 7px 10px;
+    height: 50px;
+}
+
+.search-layout {
+    width: 100%;
+    margin: auto 50px auto 0;
+}
+
+/* === Search bar ==== */
+.search-bar {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    margin: 10px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    align-items: center;
+}
+.search-bar div {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0 15px;
+    height: 100%;
+    cursor: pointer;
+}
+.search-bar div h3 {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 16px;
+    min-width: max-content;
+}
+.search-bar div i {
+    margin-left: 8px;
+    color: #949494;
+}
+.search-bar input {
+    padding: 0;
+    font-size: 17px;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+.search-bar input:focus {
+    border: none;
+}
+.search-bar > i {
+    padding: 0 5px;
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #949494;
+    background-color: rgb(240, 240, 240);
+}
+
+/* ======= */
+.search-layout > div {
+    display: flex;
+}
+
+.prod {
+    margin: 15px 0 10px;
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+.prod a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.features {
+    margin: auto 0 auto auto;
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    gap: 20px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.features li,
+.features li a {
+    align-items: center;
+    display: flex;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.features li p,
+.features li i {
+    margin-left: 5px;
+    color: white;
+    font-size: 17px;
+}
+
+/* ---------- Path ------------ */
+.path {
+    margin-top: 120px;
+}
+.path p,
+.path a {
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* ----------Offers ------------ */
+.offers {
+    padding-top: 0;
+}
+.offers > p {
+    margin-top: 20px;
+    line-height: 24px;
+}
+.offers h3 {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.offers h3 p {
+    margin-top: 10px;
+}
+
+/* ========== Pincode Selector ========== */
+/* .pincode-selector {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1999;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pincode-selector > div {
+    position: sticky;
+    margin-left: auto;
+    width: 340px;
+    height: 100%;
+    background-color: white;
+    padding: 50px 40px;
+    box-sizing: border-box;
+} */
