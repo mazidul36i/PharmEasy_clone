@@ -173,11 +173,12 @@
     list-style: none;
 }
 
-.nav > ul li {
+.nav > ul li , .nav > ul li a {
     margin: 10px 15px;
     align-items: center;
     display: flex;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav > ul li p {
@@ -1013,4 +1014,26 @@
 .FAQ > h4 {
     margin: 30px 0;
     font-weight: 600;
+}
+
+/* ---------------------- Day 4 -------------------- */
+/* ------ Floating button ------ */
+.floating-button {
+    height: 55px;
+    width: 55px;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    background-color: rgb(36, 75, 250);
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    margin: 20px;
+}
+.floating-button i {
+    font-size: 20px;
+    color: white;
 }
