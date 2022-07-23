@@ -1,0 +1,152 @@
+/* ========== Pincode Sidebar ========== */
+.sidebar-background {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sidebar-background > div {
+    display: none;
+    margin-left: auto;
+    width: 420px;
+    height: 100%;
+    background-color: white;
+    padding: 50px 40px;
+    box-sizing: border-box;
+}
+
+.pincode-sidebar h1 {
+    font-size: 26px;
+    margin: 20px 0;
+}
+.pincode-sidebar form {
+    display: flex;
+    border-radius: 7px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px var(--main-color) solid;
+}
+.pincode-sidebar form input {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+.pincode-sidebar form input[type="number"] {
+    width: 100%;
+}
+.pincode-sidebar form input[type="submit"] {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pincode-sidebar > div {
+    display: flex;
+    align-items: center;
+    border: 1px lightgrey solid;
+    border-radius: 7px;
+    padding: 10px 15px;
+    margin-top: 15px;
+}
+.pincode-sidebar > div img {
+    height: 40px;
+    margin-right: 15px;
+}
+.pincode-sidebar > div h3 {
+    color: var(--main-color);
+}
+.pincode-sidebar > div a {
+    margin-left: 10px;
+    color: rgb(0, 162, 255);
+    text-decoration: none;
+}
+.pincode-sidebar > div:nth-child(5) {
+    background-color: rgb(240, 240, 240);
+    border: none;
+}
+
+.pincode-sidebar > div:nth-child(6) {
+    background-color: rgb(227, 242, 255);
+    border: none;
+    font-size: 14px;
+}
+.pincode-sidebar > div:nth-child(5) img {
+    height: 30px;
+}
+
+.close {
+    font-size: 25px;
+    cursor: pointer;
+}
+/* ==========-Login Sidebar =========== */
+#login-sidebar {
+    padding: 0;
+}
+.login-sidebar > div {
+    display: flex;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    align-items: center;
+    background-color: teal;
+}
+.login-sidebar > div img {
+    height: 50px;
+    margin-left: 30px;
+}
+.login-sidebar > div img:last-child {
+    height: 90%;
+    margin-top: 60px;
+}
+.login-sidebar i {
+    font-size: 25px;
+    color: var(--main-color);
+    margin: 20px 30px;
+    cursor: pointer;
+}
+
+.login-sidebar > h3 {
+    padding: 0 30px;
+    font-weight: 700;
+}
+.login-sidebar > form {
+    padding: 30px;
+}
+.login-sidebar > form > div {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px grey solid;
+    box-sizing: border-box;
+}
+.login-sidebar > form label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.login-sidebar > form input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+.login-sidebar > form input[type="submit"] {
+    display: block;
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: teal;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+.login-sidebar > p {
+    padding: 0 30px;
+    font-size: 14px;
+}

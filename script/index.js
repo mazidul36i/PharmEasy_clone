@@ -450,7 +450,9 @@ let customerReviewList = [
 let bannerContainer = document.querySelector(".banners");
 createOfferList(bannerList, bannerContainer);
 
-let newLaunchesContainer = document.querySelector(".new-launches > .product-cards");
+let newLaunchesContainer = document.querySelector(
+    ".new-launches > .product-cards"
+);
 createProductList(newLaunchesList, newLaunchesContainer);
 
 let trendingContainer = document.querySelector(".trending > .product-cards");

@@ -9,6 +9,7 @@
     <link rel="icon" href="https://assets.pharmeasy.in/apothecary/images/favicon.png">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sidebars.css">
     <script src="https://kit.fontawesome.com/c0adbb8084.js" crossorigin="anonymous"></script>
 </head>
 
@@ -21,7 +22,7 @@
             <img src="https://assets.pharmeasy.in/apothecary/images/logo_big.svg?dim=256x0" alt="App logo">
             <div></div>
 
-            <div id="pick_address">
+            <div id="pick_address" class="pincode">
                 <div>
                     <img src="https://assets.pharmeasy.in/apothecary/images/ic_express%20delivery.svg?dim=16x0"
                         alt="lightning icon">
@@ -37,7 +38,7 @@
             </div>
 
             <ul>
-                <li>
+                <li id="open_login">
                     <i class="fa-regular fa-user"></i>
                     <p>Hello, Log In</p>
                 </li>
@@ -711,7 +712,55 @@
         <i class="fa-solid fa-phone"></i>
     </div>
 
+
+
+    <div class="sidebar-background">
+        <div class="pincode-sidebar">
+            <i class="fa-solid fa-xmark close" id="close"></i>
+            <h1>Choose your<br>Location</h1>
+            <form>
+                <input type="number" id="pincode" placeholder="Enter PIN Code">
+                <input type="submit" value="Check">
+            </form>
+
+            <div>
+                <img src="https://assets.pharmeasy.in/web-assets/dist/ff969f07.svg">
+                <h3>Login to View Address</h3>
+            </div>
+            <div>
+                <img src="https://assets.pharmeasy.in/web-assets/dist/90ee736b.svg">
+                <p>Serving more than 1,000 towns and cities in India.</p>
+            </div>
+            <div>
+                <img
+                    src="https://assets.pharmeasy.in/web-assets/dist/0c22e009.svg?dim=0x32&dpr=0.6666666865348816&q=100">
+                <p>Over 30,00,000 orders safely delivered<a
+                        href="https://pharmeasy.in/blog/5-step-safety-measures-were-taking-while-delivering-medicines/">Know
+                        More</a></p>
+            </div>
+        </div>
+
+        <div class="login-sidebar" id="login-sidebar">
+            <div>
+                <img src="https://assets.pharmeasy.in/web-assets/dist/fca22bc9.png">
+                <img src="https://assets.pharmeasy.in/web-assets/dist/1fe1322a.svg">
+            </div>
+            <i class="fa-solid fa-xmark login-close"></i>
+            <h3>Quick Login / Register</h3>
+            <form>
+                <div>
+                    <label for="phone">+91</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number">
+                </div>
+                <input type="submit" value="Send OTP">
+            </form>
+            <p>By clicking continue, you agree with our Privacy Policy</p>
+        </div>
+    </div>
+
+
     <script src="script/index.js"></script>
+    <script src="script/sidebars.js"></script>
 </body>
 
 </html>
